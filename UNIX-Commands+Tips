@@ -20,3 +20,9 @@ find  /tmp -type f -mtime +3 -exec rm -frv  {} \;
 ## find by size/byte files, +0=NON-EMPTY
 find /tmp -type f -size +0
 find /tmp -type f -size 0
+
+# https://www.cyberciti.biz/faq/linux-unix-shell-check-if-directory-empty/
+[ "$(ls -A /path/to/directory)" ] && echo "Not Empty" || echo "Empty"
+OR
+[ "$(ls -A /tmp)" ] && echo "Not Empty" || echo "Empty"
+
