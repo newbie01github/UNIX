@@ -14,6 +14,9 @@
 ## - find *env files in the current directory with permission bit at 444
 find . -name "*env" -perm 444 | xargs ls -l
 
+## find and sort liting
+find . -name "*abcd*log" -mtime +300 -exec ls -lrt "{}" +;
+
 ## - find and remove files that are 3 days old
 find  /tmp -type f -mtime +3 -exec rm -frv  {} \;
 
