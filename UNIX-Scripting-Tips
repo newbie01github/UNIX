@@ -1,0 +1,16 @@
+## These are mostly for bash
+
+## sample1.txt:
+dir14
+dir9
+dir8
+dir7
+dir5
+dir4
+
+## INSTEAD OF
+cat sample1.txt | cut -c4- | awk '$1 <= 15 { print "dir"$1 }' > sample1.txt.tmp
+cp sample1.txt.tmp sample1.txt
+## DO
+awk 'substr($0, 4)+0 <= 15' sample1.txt > sample1.txt.tmp && cp sample1.txt.tmp sample1.txt
+
