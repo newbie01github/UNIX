@@ -14,3 +14,6 @@ cp sample1.txt.tmp sample1.txt
 ## DO
 awk 'substr($0, 4)+0 <= 15' sample1.txt > sample1.txt.tmp && cp sample1.txt.tmp sample1.txt
 
+## File/directory exist
+if [[ -e  "dir${vnext}" ]] ; then "Fatal error: dir${vnext} must not exist"; exit 1; fi
+echo mv "$line" "dir${vnext}"
